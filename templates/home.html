@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Test APP.</h1>
+        <h1>Current version app returns result of hard-coded input. to take input user has to make changes in html template to collect data and enable getting body in route of flask function.</h1>
+        <h1>For now, just click predict.</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('get_intrusion')}}"method="post">
+      <input type="text" name="interview_score3" placeholder="var1" /><br>
+    	<input type="text" name="experience" placeholder="var2" /><br>
+        <input type="text" name="test_score" placeholder="var3" /><br>
+        <input type="text" name="interview_score5" placeholder="var4" /><br>
+        <input type="text" name="interview_score6" placeholder="var5" /><br>
+        <input type="text" name="interview_score6" placeholder="etc.." /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
