@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn --bind 0.0.0.0:5000 predict:app
+    expose:
+      - 5000
+  nginx:
+    build: ./nginx
+    ports:
+      - 8080:8080
+    depends_on:
+      - webapp
